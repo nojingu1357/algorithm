@@ -5,4 +5,4 @@
 #### [컨베이어 벨트 위의 로봇](https://www.acmicpc.net/problem/20055)
 
 # 2023-09-26
-#### [빗물] (https://www.acmicpc.net/problem/14719)
+#### [빗물](https://www.acmicpc.net/problem/14719)
