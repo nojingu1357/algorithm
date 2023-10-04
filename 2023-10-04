@@ -1,0 +1,49 @@
+#include <iostream>	
+#include <algorithm>
+using namespace std;
+
+
+int main() {
+
+	int num[10][7] ={
+		{1,1,1,1,1,0,1}, //6 1
+		{0,1,1,0,0,0,0}, //2 5
+		{1,1,0,1,1,1,0}, //5 2
+		{1,1,1,1,0,1,0}, //5 2
+		{0,1,1,0,0,1,1}, //4 3
+		{1,0,1,1,0,1,1}, //5 2
+		{1,0,1,1,1,1,1}, //6 1
+		{1,1,1,0,0,0,0}, //3 4
+		{1,1,1,1,1,1,1}, //7 0
+		{1,1,1,1,0,1,1}, //6 1
+	};
+
+	int n,k,p,x;
+	cin>>n>>k>>p>>x;
+	
+
+	// input : n = 최대층수, k = 자릿수, p = 반전시킬 갯수, x = 실제층수 
+	// output : 반전시켜서 만들수 있는 숫자의 갯수
+
+	int total=0;
+	for(int i=1;i<=n;i++){
+		int cnt=0;
+		if(i==x) continue;
+		else {
+			int cnt=0;
+			int now=x, roop=i;
+			for(int j=0;j<k;j++){
+				for(int l=0;l<7;l++){
+					if(num[now%10][l]!=num[roop%10][l]) cnt++;
+				}
+				now/=10;
+				roop/=10;
+			}
+			if(cnt<=p) total++;
+		}
+	}
+	cout<<total<<endl;
+	
+	return 0;
+}  
+
