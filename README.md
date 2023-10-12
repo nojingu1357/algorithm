@@ -9,3 +9,6 @@
 
 # 2023-10-04
 #### [빌런 호석](https://www.acmicpc.net/problem/22251)
+
+# 2023-10-12
+#### [유기농 배추](https://www.acmicpc.net/problem/1012)
