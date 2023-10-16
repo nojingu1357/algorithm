@@ -14,4 +14,4 @@
 #### [유기농 배추](https://www.acmicpc.net/problem/1012)
 
 # 2023-10-16
-#### [연결 요소의 개](https://www.acmicpc.net/problem/11724)
+#### [연결 요소의 개수](https://www.acmicpc.net/problem/11724)
