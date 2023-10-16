@@ -1,0 +1,38 @@
+#include <iostream>
+using namespace std;
+
+int n,m;
+int cnt=n;
+
+bool in[1001][1001]={0, };
+bool ch[1001]={0, };
+
+void solve(int x){
+    ch[x]=1;
+    for(int i=1;i<=n;i++){
+        if(in[x][i]&&!ch[i]) solve(i);
+    }
+}
+
+int main(){
+    
+    cin>>n>>m;
+
+    for(int i=0;i<m;i++){
+        int x, y;
+        cin>>x>>y;
+        in[x][y]=1;
+        in[y][x]=1;
+    }
+
+    for(int i=1;i<=n;i++){
+        if(!ch[i]){
+            cnt++;
+            solve(i);
+        }
+    }
+
+    cout<<cnt<<endl;
+
+    return 0;
+}
