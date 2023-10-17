@@ -1,0 +1,42 @@
+#define _CRT_SECURE_NO_WARNINGS
+#include <iostream>
+#include <deque>
+using namespace std;
+
+deque<int> d[100001];
+int cnt=0;
+int n,m,p;
+bool ch[100001]={0, };
+
+void solve(int x){
+    if(ch[x]==1){
+        cnt=-1;
+    } else {
+        ch[x]=1;
+        if(d[x].size()!=0){
+            cnt++;
+            solve(d[x].front());
+        }
+    }
+}
+
+int main(){
+    ios_base::sync_with_stdio(false);
+    cin.tie(NULL);
+    cout.tie(NULL);
+    
+    // 노인 수, 채널의 수, 지금 방송중인 채널
+    cin>>n>>m>>p;
+
+    for(int i=0;i<n;i++){
+        int x,y;
+        cin>>x>>y;
+        d[y].push_back(x);
+    }
+
+    solve(p);
+
+    cout<<cnt<<endl;
+
+    return 0;
+}
