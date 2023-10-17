@@ -15,3 +15,6 @@
 
 # 2023-10-16
 #### [연결 요소의 개수](https://www.acmicpc.net/problem/11724)
+
+# 2023-10-17
+#### [DOM](https://www.acmicpc.net/problem/10552)
