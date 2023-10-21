@@ -1,0 +1,61 @@
+#include <iostream>
+#include <vector>
+#include <cstring>
+
+using namespace std;
+
+vector<int> v[101];
+bool visit[101][101]={0, };
+
+int ans=-1;
+int k,n;
+
+void solve(int x, int y){
+    if(v[x][y]>k){
+        if(!visit[x+1][y]&&x+1<n) {
+            visit[x+1][y]=1;
+            solve(x+1,y);
+        }
+        if(!visit[x-1][y]&&x-1>=0) {
+            visit[x-1][y]=1;
+            solve(x-1,y);
+        }
+        if(!visit[x][y+1]&&y+1<n) {
+            visit[x][y+1]=1;
+            solve(x,y+1);
+        }
+        if(!visit[x][y-1]&&y-1>=0) {
+            visit[x][y-1]=1;
+            solve(x,y-1);
+        }
+    }
+}
+
+int main(){
+    cin>>n;
+
+    for(int i=0;i<n;i++){
+        for(int j=0;j<n;j++){
+            int x;
+            cin>>x;
+            v[i].push_back(x);
+        }
+    }
+
+    for(k=0;k<=100;k++){
+        memset(visit, 0, sizeof(visit));
+        int cnt=0;
+        for(int i=0;i<n;i++){
+            for(int j=0;j<n;j++){
+                if(v[i][j]>k&&visit[i][j]==0){
+                    cnt++;
+                    visit[i][j]=1;
+                    solve(i, j);
+                }
+            }
+        }
+        if(cnt>=ans) ans=cnt;
+    }
+    cout<<ans<<endl;
+    return 0;
+}
