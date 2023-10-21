@@ -23,4 +23,4 @@
 #### [경로 찾기](https://www.acmicpc.net/problem/11403)
 
 # 2023-10-21
-#### [안전 영역](https://www.acmicpc.net/problem/2468)
+#### [안전 영역] [Click](https://www.acmicpc.net/problem/2468)
