@@ -24,3 +24,7 @@
 
 # 2023-10-21
 #### [안전 영역](https://www.acmicpc.net/problem/2468)
+
+# 2023-10-22
+#### [음식물 피하기](https://www.acmicpc.net/problem/1743)
+
