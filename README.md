@@ -28,3 +28,5 @@
 # 2023-10-22
 #### [음식물 피하기](https://www.acmicpc.net/problem/1743)
 
+# 2023-10-23
+#### [단지번호붙이기](https://www.acmicpc.net/problem/2667)
