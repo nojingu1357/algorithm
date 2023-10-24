@@ -30,3 +30,6 @@
 
 # 2023-10-23
 #### [단지번호 붙이기](https://www.acmicpc.net/problem/2667)
+
+# 2023-10-24
+#### [영역 구하기](https://www.acmicpc.net/problem/2583)
