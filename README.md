@@ -33,3 +33,6 @@
 
 # 2023-10-24
 #### [영역 구하기](https://www.acmicpc.net/problem/2583)
+
+# 2023-10-25
+#### [적록색약](https://www.acmicpc.net/problem/10026)
