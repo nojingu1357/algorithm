@@ -36,3 +36,6 @@
 
 # 2023-10-25
 #### [적록색약](https://www.acmicpc.net/problem/10026)
+
+# 2023-10-26
+#### [숫자고르기](https://www.acmicpc.net/problem/2668)
