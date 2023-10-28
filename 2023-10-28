@@ -1,0 +1,42 @@
+#include <iostream>
+#include <deque>
+#include <algorithm>
+
+using namespace std;
+
+int main(){
+
+    //사람수 원하는정답 관계(부모 자식) 입력횟수
+    int n,n_1,n_2,m,cnt=0;
+
+    int arr[101][101]={0,};
+    bool visit[101]={0,};
+    int ans[101]={0,};
+    deque<int> q;
+
+    cin>>n>>n_1>>n_2>>m;
+
+    for(int i=0;i<m;i++){
+        int x, y;
+        cin>>x>>y;
+        arr[x][y]=1;
+        arr[y][x]=1;
+    }
+    
+    q.push_back(n_1);
+    while(!q.empty()){
+        visit[q.front()]=1;
+        for(int i=1;i<=n;i++){
+            if(arr[q.front()][i]==1&&visit[i]==0){
+                ans[i]=ans[q.front()]+1;
+                q.push_back(i);
+            }
+        }
+        q.pop_front();
+    }
+
+    if(ans[n_2]==0)cout<<"-1"<<endl;
+    else cout<<ans[n_2]<<endl;
+
+    return 0;
+}
