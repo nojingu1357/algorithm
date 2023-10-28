@@ -39,3 +39,7 @@
 
 # 2023-10-26
 #### [숫자고르기](https://www.acmicpc.net/problem/2668)
+
+# 2023-10-28
+#### [촌수계산](https://www.acmicpc.net/problem/2644)
+
