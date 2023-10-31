@@ -45,3 +45,7 @@
 
 # 2023-10-30
 #### [DFS와 BFS](https://www.acmicpc.net/problem/1260)
+
+# 2023-10-31
+#### [미로 탐색](https://www.acmicpc.net/problem/2178)
+
