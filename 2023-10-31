@@ -1,0 +1,49 @@
+#include <iostream>
+#include <deque>
+
+using namespace std;
+
+
+int main(){
+
+    int n,m;
+    int arr[101][101]={0,};
+    int visit[101][101]={0,};
+    deque<pair<int,int>> d;
+
+    cin>>n>>m;
+    
+    for(int i=0;i<n;i++){
+        string x;
+        cin>>x;
+        for(int j=0;j<m;j++){
+            arr[i][j]=x[j];
+        }
+    }
+    
+    d.push_back(make_pair(0,0));
+    visit[d[0].first][d[0].second]=1;
+    while(!d.empty()){
+        if(arr[d[0].first+1][d[0].second]==49&&d[0].first+1<n&&visit[d[0].first+1][d[0].second]==0){
+            visit[d[0].first+1][d[0].second]=visit[d[0].first][d[0].second]+1;
+            d.push_back(make_pair(d[0].first+1, d[0].second));
+        }
+        if(arr[d[0].first][d[0].second+1]==49&&d[0].second+1<m&&visit[d[0].first][d[0].second+1]==0){
+            visit[d[0].first][d[0].second+1]=visit[d[0].first][d[0].second]+1;
+            d.push_back(make_pair(d[0].first, d[0].second+1));
+        }
+        if(arr[d[0].first-1][d[0].second]==49&&d[0].first-1>=0&&visit[d[0].first-1][d[0].second]==0){
+            visit[d[0].first-1][d[0].second]=visit[d[0].first][d[0].second]+1;
+            d.push_back(make_pair(d[0].first-1, d[0].second));
+        }
+        if(arr[d[0].first][d[0].second-1]==49&&d[0].second-1>=0&&visit[d[0].first][d[0].second-1]==0){
+            visit[d[0].first][d[0].second-1]=visit[d[0].first][d[0].second]+1;
+            d.push_back(make_pair(d[0].first, d[0].second-1));
+        }
+        d.pop_front();
+    }
+
+    cout<<visit[n-1][m-1]<<endl;
+    
+    return 0;
+}
