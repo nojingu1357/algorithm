@@ -1,0 +1,46 @@
+#include <iostream>
+#include <deque>
+#include <cstring>
+
+using namespace std;
+
+int visit[301][301]={0,};
+
+void solve(int x, int y, int li){
+    deque<pair<int, int>> d;
+    d.push_back(make_pair(x, y));
+    // visit[x][y]=1;
+
+    int move_x[8]={1, 2, 2, 1, -1, -2, -2, -1};
+    int move_y[8]={2, 1, -1, -2, -2, -1, 1, 2};
+
+    while(!d.empty()){
+        x=d.front().first;
+        y=d.front().second;
+        for(int i=0;i<8;i++){
+            if(visit[x+move_x[i]][y+move_y[i]]==0&&(x+move_x[i])>=0&&(x+move_x[i])<li&&(y+move_y[i])>=0&&(y+move_y[i])<li){
+                d.push_back(make_pair(x+move_x[i], y+move_y[i]));
+                visit[x+move_x[i]][y+move_y[i]]=visit[x][y]+1;
+            }
+        }
+        d.pop_front();
+    }
+
+}
+
+int main(){
+    
+    int n;
+    cin>>n;
+
+    for(int i=0;i<n;i++){
+        int li,x_1,y_1,x_2,y_2;
+        cin>>li>>x_1>>y_1>>x_2>>y_2;
+        if(x_1!=x_2||y_1!=y_2) solve(x_1,y_1, li);
+        
+        cout<<visit[x_2][y_2]<<endl;
+        memset(visit,0,sizeof(visit));
+    }
+
+    return 0;
+}
