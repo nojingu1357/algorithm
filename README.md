@@ -49,5 +49,7 @@
 # 2023-10-31
 #### [미로 탐색](https://www.acmicpc.net/problem/2178)
 #### [나이트의 이동](https://www.acmicpc.net/problem/7562)
+#### [숨바꼭질](https://www.acmicpc.net/problem/1697)
+
 
 
