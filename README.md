@@ -51,5 +51,7 @@
 #### [나이트의 이동](https://www.acmicpc.net/problem/7562)
 #### [숨바꼭질](https://www.acmicpc.net/problem/1697)
 
+# 2023-11-01
+#### [숨바꼭질2](https://www.acmicpc.net/problem/12851)
 
 
