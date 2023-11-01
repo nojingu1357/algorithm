@@ -1,0 +1,46 @@
+#include <iostream>
+#include <deque>
+
+using namespace std;
+
+int main(){
+    
+    int n,k;
+    cin>>n>>k;
+
+    deque<pair<int,int>> d;
+    bool visit[100001]={0,};
+    int cnt=0;
+    int time=0;
+
+    d.push_back({n, 0});
+    while(!d.empty()){
+        int x=d.front().first;
+        visit[x]=1;
+        
+        if(x==k){
+            if(cnt==0){
+                time=d.front().second;
+                cnt++;
+            } else if (time==d.front().second){
+                cnt++;
+            }
+        }
+
+        if(x-1>=0&&visit[x-1]==0){
+            d.push_back({x-1, d.front().second+1});
+        }
+        if(x+1<100001&&visit[x+1]==0){
+            d.push_back({x+1, d.front().second+1});
+        }
+        if(2*x<100001&&visit[2*x]==0){
+            d.push_back({2*x, d.front().second+1});
+        }
+        d.pop_front();
+    }
+
+    cout<<time<<endl;
+    cout<<cnt<<endl;
+
+    return 0;
+}
