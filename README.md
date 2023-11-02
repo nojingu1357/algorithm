@@ -52,6 +52,8 @@
 #### [숨바꼭질](https://www.acmicpc.net/problem/1697)
 
 # 2023-11-01
-#### [숨바꼭질2](https://www.acmicpc.net/problem/12851)
+#### [숨바꼭질 2](https://www.acmicpc.net/problem/12851)
 
+# 2023-11-02
+#### [숨바꼭질 3](https://www.acmicpc.net/problem/13549)
 
