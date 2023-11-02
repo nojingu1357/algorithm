@@ -1,0 +1,43 @@
+#include <iostream>
+#include <deque>
+#include <cstring>
+
+using namespace std;
+
+int main(){
+    
+    int n,k;
+    cin>>n>>k;
+
+    deque<int> d;
+    bool visit[100001]={0,};
+    int arr[100001]={0,};
+    d.push_back(n);
+    visit[d.front()]=1;
+
+    if(n!=k){
+        while(!d.empty()){
+            if(d.front()*2<=100001&&visit[d.front()*2]==0){
+                visit[d.front()*2]=1;
+                arr[d.front()*2]=arr[d.front()];
+                d.push_back(d.front()*2);
+            }
+            if(d.front()-1>=0&&visit[d.front()-1]==0){
+                visit[d.front()-1]=1;
+                arr[d.front()-1]=arr[d.front()]+1;
+                d.push_back(d.front()-1);
+            }
+            if(d.front()+1<=100001&&visit[d.front()+1]==0){
+                visit[d.front()+1]=1;
+                arr[d.front()+1]=arr[d.front()]+1;
+                d.push_back(d.front()+1);
+            }
+            
+            d.pop_front();
+        }
+    }
+
+    cout<<arr[k]<<endl;
+
+    return 0;
+}
