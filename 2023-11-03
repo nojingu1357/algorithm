@@ -1,0 +1,56 @@
+#include <iostream>
+#include <queue>
+#include <string>
+
+using namespace std;
+
+int main(){
+    
+    int n,k;
+    cin>>n>>k;
+
+    queue<pair<int,string>> d;
+    int visit[100001]={0,};
+    
+    d.push({n,""});
+    int now=d.front().first;
+    string passed = d.front().second;
+
+    if(n<k){
+        while(!d.empty()){
+
+            now=d.front().first;
+            passed = d.front().second;
+
+            if(now==k){
+                cout<<visit[k]<<"\n"<<passed<<k<<endl;
+                break;
+            }
+            if(now-1>=0&&visit[now-1]==0){
+                visit[now-1]=visit[now]+1;
+                d.push({now-1, passed+to_string(now)+" "});
+                
+            }
+            if(now+1<=100001&&visit[now+1]==0){
+                visit[now+1]=visit[now]+1;
+                d.push({now+1, passed+to_string(now)+" "});
+            }
+            if(now*2<=100001&&visit[now*2]==0){
+                visit[now*2]=visit[now]+1;
+                d.push({now*2, passed+to_string(now)+" "});
+            }
+
+            d.pop();
+        }
+    }else if(n>k){
+        cout<<n-k<<endl;
+        for(int i=n;i>=k;i--){
+            cout<<i<<" ";
+        }cout<<endl;
+    }else{
+        cout<<0<<endl;
+        cout<<n<<endl;
+    }
+
+    return 0;
+}
