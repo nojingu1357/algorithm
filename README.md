@@ -59,3 +59,4 @@
 
 # 2023-11-03
 #### [숨바꼭질 4](https://www.acmicpc.net/problem/13913)
+#### [스타트링크](https://www.acmicpc.net/problem/5014)
