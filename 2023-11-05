@@ -1,0 +1,72 @@
+#include <iostream>
+#include <deque>
+
+using namespace std;
+
+struct detail{
+    int z,y,x,cnt;
+};
+
+int l, r, c, ans=0;
+char s;
+char arr[31][31][31];
+int dx[6]={1,-1,0,0,0,0}, dy[6]={0,0,1,-1,0,0},dz[6]={0,0,0,0,1,-1};
+deque<detail> d;
+
+bool ch(int x,int y,int z){
+    return (0<=x&&x<c)&&(0<=y&&y<r)&&(0<=z&&z<l);
+}
+
+
+void move(){
+    while(!d.empty()){
+        auto n=d.front();
+        for(int i=0;i<6;i++){
+        
+            int mx=n.x+dx[i];
+            int my=n.y+dy[i];
+            int mz=n.z+dz[i];
+            
+            if(ch(mx,my,mz)&&arr[mz][my][mx]=='E'){
+                ans=n.cnt+1;
+                return;
+            }
+            if(ch(mx,my,mz)&&arr[mz][my][mx]=='.'){
+                d.push_back({mz,my,mx,n.cnt+1});
+                arr[mz][my][mx]='0';
+            }
+        }
+        d.pop_front();
+    }
+}
+
+int main(){
+    ios::sync_with_stdio(false);
+    cin.tie(NULL);
+    cout.tie(NULL);
+    
+    while(1){
+        cin>>l>>r>>c;
+        if (l==0&&r==0&&c==0) return 0;
+        
+        ans=0;
+        while(!d.empty()) d.pop_front();
+
+        for(int i=0;i<l;i++){
+            for(int j=0;j<r;j++){
+                for(int m=0;m<c;m++){
+                    cin>>arr[i][j][m];
+                    if(arr[i][j][m]=='S') d.push_back({i,j,m,0});
+                }
+            }
+        }
+        move();
+
+        if(ans==0){
+            cout<<"Trapped!"<<endl;
+        }else {
+            cout<<"Escaped in "<<ans<<" minute(s)."<<endl;
+        }
+    }
+    return 0;
+}
