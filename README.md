@@ -63,3 +63,6 @@
 
 # 2023-11-05
 #### [상범 빌딩](https://www.acmicpc.net/problem/6593)
+
+# 2023-11-06
+#### [토마토](https://www.acmicpc.net/problem/7576)
