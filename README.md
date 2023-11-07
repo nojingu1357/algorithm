@@ -66,3 +66,6 @@
 
 # 2023-11-06
 #### [토마토](https://www.acmicpc.net/problem/7576)
+
+# 2023-11-07
+#### [인구 이동](https://www.acmicpc.net/problem/16234)
