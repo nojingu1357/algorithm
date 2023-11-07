@@ -1,0 +1,108 @@
+#include <iostream>
+#include <deque>
+
+using namespace std;
+
+struct info
+{
+    int y,x;
+};
+
+int n,l,r, cnt=0, sum=0;
+int arr[51][51]={0,};
+bool visit[51][51]={0,};
+int dx[4]={-1,1,0,0}, dy[4]={0,0,-1,1};
+deque<info> d;
+deque<info> q;
+
+bool ch1(int x, int y){ //비교
+    if(x>y){
+        return (l<=(x-y))&&((x-y)<=r);
+    } else {
+        return (l<=(y-x))&&((y-x)<=r);
+    }
+}
+
+bool ch2(int x, int y){ //비교
+    return (0<=x&&x<n)&&(0<=y&&y<n);
+}
+
+void solve(){
+    while(!d.empty()){
+        auto m = d.front();
+        for(int i=0;i<4;i++){
+            int nx=m.x+dx[i];
+            int ny=m.y+dy[i];
+            if(ch1(arr[m.y][m.x],arr[ny][nx])&&ch2(nx, ny)&&visit[ny][nx]==0){
+                d.push_back({ny, nx});
+                q.push_back({ny,nx});
+                visit[ny][nx]=1;
+                sum+=arr[ny][nx];
+            }
+        }
+        d.pop_front();
+    }
+}
+
+void change(int sum){
+    int average=sum/q.size();
+    for(int i=0;i<q.size();i++){
+        arr[q[i].y][q[i].x]=average;
+    }
+}
+
+void clearV(){
+    for(int i=0;i<n;i++){
+        for(int j=0;j<n;j++){
+            visit[i][j]=0;
+        }
+    }
+}
+
+void clearQ(){
+    while(!q.empty()){q.pop_front();}
+}
+
+int main(){
+    ios::sync_with_stdio(false);
+    cin.tie(NULL);
+    cout.tie(NULL);
+    
+    
+    cin>>n>>l>>r;
+
+    for(int i=0;i<n;i++){
+        for(int j=0;j<n;j++){
+            cin>>arr[i][j];
+        }
+    }
+
+    int ans=0;
+    bool flag=1;
+    while(flag){
+        flag=0;
+        for(int i=0;i<n;i++){
+            for(int j=0;j<n;j++){
+                if(visit[i][j]==0){
+                    visit[i][j]=1;
+                    sum=arr[i][j];
+                    d.push_back({i,j});
+                    q.push_back({i,j});
+                    solve();
+                }
+                if(q.size()>1){
+                    flag=1;
+                    change(sum);
+                } 
+                clearQ();
+            }
+        }
+
+        if(flag==0)cout<<ans<<endl;
+        else{
+            clearV();
+            ans++;
+        }
+    }
+    return 0;
+}
