@@ -69,3 +69,7 @@
 
 # 2023-11-07
 #### [인구 이동](https://www.acmicpc.net/problem/16234)
+
+# 2023-11-08
+#### [에너지 드링크](https://www.acmicpc.net/problem/20115)
+
