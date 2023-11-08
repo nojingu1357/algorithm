@@ -1,0 +1,30 @@
+#define _CRT_SECURE_NO_WARNINGS
+#include <iostream>
+#include <deque>
+#include <algorithm>
+
+using namespace std;
+
+int main(){
+    int n;
+    cin>>n;
+
+    deque<float> d;
+    for(int i=0;i<n;i++){
+        int x;
+        cin>>x;
+        d.push_back(x);
+    }
+
+    sort(d.begin(),d.end());
+    float ans;
+    while(d.size()!=1){
+        float sum=d.front()/2+d.back();
+        d.back()=sum;
+        ans=sum;
+        d.pop_front();
+    }
+    
+    cout<<ans<<endl;
+    return 0;
+}
