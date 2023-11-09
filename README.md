@@ -75,3 +75,5 @@
 
 # 2023-11-08
 #### [예산](https://www.acmicpc.net/problem/2512)
+#### [IF문 좀 대신 써줘](https://www.acmicpc.net/problem/19637)
+
