@@ -79,3 +79,5 @@
 
 # 2023-11-11
 #### [용돈 관리](https://www.acmicpc.net/problem/6236)
+#### [기타 레슨](https://www.acmicpc.net/problem/2343)
+
