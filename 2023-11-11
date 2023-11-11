@@ -1,0 +1,45 @@
+#include <iostream>
+#include <deque>
+
+using namespace std;
+
+int main(){
+    
+    int n,m,ans;
+    int left=0,right=0,mid;
+    deque<int> d;
+
+    cin>>n>>m;
+    for(int i=0;i<n;i++){
+        int x;
+        cin>>x;
+        right+=x;
+        d.push_back(x);
+    }
+    
+    while(left<=right){
+        mid=(left+right)/2;
+        bool flag=1;
+        int temp=mid,cnt=1;
+        for(int i=0;i<n;i++){
+            if(mid<d[i]){
+                flag=0;
+                break;
+            }
+            if(temp<d[i]){
+                temp=mid;
+                cnt++;
+            }
+            temp-=d[i];
+        }
+        if(flag==0||cnt>m){
+            left=mid+1;
+        }else{
+            ans=mid;
+            right=mid-1;
+        }
+    }
+
+    cout<<ans<<"\n";
+    return 0;
+}
