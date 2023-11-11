@@ -73,7 +73,9 @@
 # 2023-11-08
 #### [에너지 드링크](https://www.acmicpc.net/problem/20115)
 
-# 2023-11-08
+# 2023-11-09
 #### [예산](https://www.acmicpc.net/problem/2512)
 #### [IF문 좀 대신 써줘](https://www.acmicpc.net/problem/19637)
 
+# 2023-11-11
+#### [용돈 관리](https://www.acmicpc.net/problem/6236)
