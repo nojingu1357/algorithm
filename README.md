@@ -81,3 +81,5 @@
 #### [용돈 관리](https://www.acmicpc.net/problem/6236)
 #### [기타 레슨](https://www.acmicpc.net/problem/2343)
 
+# 2023-11-12
+#### [공유기 설치](https://www.acmicpc.net/problem/2110)
