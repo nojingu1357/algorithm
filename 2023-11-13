@@ -1,0 +1,30 @@
+#include <iostream>
+#include <deque>
+
+using namespace std;
+
+int main(){
+    int n;
+    cin>>n;
+    
+    deque<long long int> d;
+    for (int i=0;i<n;i++){
+        int x; cin>>x;
+        d.push_back(x);
+    }
+    
+    int left=0,right=n-1;
+    long long int l,r,save=abs(d[left]+d[right]);
+    while(left<right){
+        int sum=d[left]+d[right];
+        if(save>=abs(sum)) {
+            save=abs(sum);
+            l=d[left]; r=d[right];
+        }
+        if(sum<0) left++;
+        else right--;
+    }
+
+    cout<<l<<" "<<r<<endl;
+    return 0;
+}
