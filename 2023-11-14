@@ -1,0 +1,57 @@
+#include <iostream>
+#include <deque>
+
+using namespace std;
+
+struct info
+{
+    long long int t,a,h;
+};
+
+deque<info> d;
+long long int n,atk;
+
+bool solve(long long int mid){
+    long long int n_atk=atk,hp=mid;
+    for(int i=0;i<n;i++){
+        if(d[i].t==1){
+            if(d[i].h%n_atk==0){
+                hp-=(d[i].h/n_atk-1)*d[i].a;
+            }else{
+                hp-=(d[i].h/n_atk)*d[i].a;
+            }
+        }else{
+            n_atk+=d[i].a;
+            if(d[i].h+hp>mid){
+                hp=mid;
+            }else hp+=d[i].h;
+        }
+        if(hp<=0){
+            return 0;
+        }
+    }
+    return 1;
+}
+
+int main(){
+
+    cin>>n>>atk;
+
+    for(int i=0;i<n;i++){
+        long long int t,a,h;
+        cin>>t>>a>>h;
+        d.push_back({t,a,h});
+    }
+    
+    long long int left=0,right=1e18,mid,ans;
+    while(left<=right){
+        mid=(left+right)/2;
+        if(solve(mid)){
+            ans=mid;
+            right=mid-1;
+        }else left=mid+1;
+    }
+    
+    cout<<ans<<"\n";
+    return 0;
+}
