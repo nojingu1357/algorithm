@@ -86,3 +86,6 @@
 
 # 2023-11-13
 #### [용액](https://www.acmicpc.net/problem/2467)
+
+# 2023-11-14
+#### [드래곤 앤 던전](https://www.acmicpc.net/problem/16434)
