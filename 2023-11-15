@@ -1,0 +1,46 @@
+#include <iostream>
+#include <deque>
+#include <algorithm>
+
+using namespace std;
+
+struct info
+{
+    int a,b,c;
+};
+
+long long int n,k,d;
+deque<info> box;
+
+bool solve(int mid){
+    long long int ch=0;
+    for(int i=0;i<k;i++){
+        int h=min(box[i].b, mid);
+        if(h>=box[i].a){
+            ch+=((h-box[i].a)/box[i].c)+1;
+        }
+    }
+    return ch>=d;
+}
+
+int main(){
+    cin>>n>>k>>d;
+    
+    for(int i=0;i<k;i++){
+        int a,b,c;
+        cin>>a>>b>>c;
+        box.push_back({a,b,c});
+    }
+
+    long long int left=0,right=n,mid,ans=0;
+    while(left<=right){
+        mid=(left+right)/2;
+        if(solve(mid)){
+            ans=mid;
+            right=mid-1;
+        }else left=mid+1;
+    }
+
+    cout<<ans<<"\n";
+    return 0;
+}
