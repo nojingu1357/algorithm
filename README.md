@@ -89,3 +89,6 @@
 
 # 2023-11-14
 #### [드래곤 앤 던전](https://www.acmicpc.net/problem/16434)
+
+# 2023-11-15
+#### [도토리 숨기기](https://www.acmicpc.net/problem/15732)
