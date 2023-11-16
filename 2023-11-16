@@ -1,0 +1,29 @@
+#include <iostream>
+#include <algorithm>
+
+using namespace std;
+
+long long int n,k,cnt;
+long long int solve(long long int mid){
+    long long int sum=0;
+    for(int i=1;i<=n;i++){
+        sum+=min(mid/i,n);
+    }
+    return sum;
+}
+
+int main(){
+    cin>>n>>k;
+    k=min((long long)1000000000, k);
+    
+    long long int left=1,right=n*n,mid;
+    while(left<=right){
+        mid=(left+right)/2;
+        cnt=solve(mid);
+        if(cnt>=k)right=mid-1;
+        else left=mid+1;
+    }
+
+    cout<<left<<endl;
+    return 0;
+}
