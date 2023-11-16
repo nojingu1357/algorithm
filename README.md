@@ -92,3 +92,6 @@
 
 # 2023-11-15
 #### [도토리 숨기기](https://www.acmicpc.net/problem/15732)
+
+# 2023-11-16
+#### [K번째 수](https://www.acmicpc.net/problem/1300)
