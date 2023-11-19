@@ -95,3 +95,6 @@
 
 # 2023-11-16
 #### [K번째 수](https://www.acmicpc.net/problem/1300)
+
+# 2023-11-19  
+#### [지름길](https://www.acmicpc.net/problem/1446)
