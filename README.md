@@ -98,3 +98,6 @@
 
 # 2023-11-19  
 #### [지름길](https://www.acmicpc.net/problem/1446)
+
+# 2023-11-20
+#### [서강근육맨](https://www.acmicpc.net/problem/20300)
