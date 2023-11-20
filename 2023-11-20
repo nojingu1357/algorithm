@@ -1,0 +1,33 @@
+#include <iostream>
+#include <deque>
+#include <algorithm>
+
+using namespace std;
+
+int main(){
+    
+    int n;
+    cin>>n;
+
+    deque<long long> d;
+    for(int i=0;i<n;i++){
+        long long x;
+        cin>>x;
+        d.push_back(x);
+    }
+
+    sort(d.begin(), d.end());
+
+    long long ans=0;
+    if(n%2==1){
+        ans=d.back();
+        n--;
+    }
+    for(int i=0;i<(n/2);i++){
+        long long cnt=d[i]+d[(n-1)-i];
+        if(ans<cnt) ans=cnt;
+    }
+
+    cout<<ans<<"\n";
+    return 0;
+}
