@@ -101,3 +101,6 @@
 
 # 2023-11-20
 #### [서강근육맨](https://www.acmicpc.net/problem/20300)
+
+# 2023-11-21
+#### [햄버거 분배](https://www.acmicpc.net/problem/19941)
