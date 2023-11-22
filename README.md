@@ -104,3 +104,7 @@
 
 # 2023-11-21
 #### [햄버거 분배](https://www.acmicpc.net/problem/19941)
+
+# 2023-11-22
+#### [블로그2](https://www.acmicpc.net/problem/20365)
+
