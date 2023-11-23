@@ -108,3 +108,5 @@
 # 2023-11-22
 #### [블로그2](https://www.acmicpc.net/problem/20365)
 
+# 2023-11-23
+#### [A → B](https://www.acmicpc.net/problem/16953)
