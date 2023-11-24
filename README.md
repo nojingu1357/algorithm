@@ -110,3 +110,6 @@
 
 # 2023-11-23
 #### [A → B](https://www.acmicpc.net/problem/16953)
+
+# 2023-11-24
+#### [민겸 수](https://www.acmicpc.net/problem/21314)
