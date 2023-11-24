@@ -1,0 +1,46 @@
+#include <iostream>
+#include <string>
+
+using namespace std;
+
+int main(){
+    
+    string x;
+    getline(cin, x);
+
+    string big="",small="";
+
+    long long cnt=0;
+    for(int i=0;i<x.size();i++){
+        if(x[i]=='M'){
+            cnt++;
+        }else{
+            if(cnt==0){
+                big+=to_string(5);
+                small+=to_string(5);
+            }else{
+                big+=to_string(5);
+                small+=to_string(1);
+                while(cnt){
+                    big+=to_string(0);
+                    if(cnt-1>0)small+=to_string(0);
+                    cnt--;
+                }
+                small+=to_string(5);
+            }
+        }
+    }
+
+    if(cnt!=0){
+        small+=to_string(1);
+        while(cnt){
+            big+=to_string(1);
+            if(cnt-1>0) small+=to_string(0);
+            cnt--;
+        }
+    }
+    
+    cout<<big<<endl;
+    cout<<small<<endl;
+    return 0;
+}
